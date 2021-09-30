@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pgencpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgencpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: pgencpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: pgencpipelinesjavascriptdocker 
+          image: acrentry.azurecr.io/pgencpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
